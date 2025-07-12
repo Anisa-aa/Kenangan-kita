@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenangan Kita</title>
+  <link rel="stylesheet" href="style02.css">
+  <style>
+    /* ======== ANIMASI MASUK ======== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .zoom-in {
+      animation: zoomIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    section, h1, h2, p, img, video, button {
+      transition: all 0.8s ease-in-out;
+    }
+
+    .photos img {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .photos img:nth-child(1) { animation-delay: 0.2s; }
+    .photos img:nth-child(2) { animation-delay: 0.4s; }
+    .photos img:nth-child(3) { animation-delay: 0.6s; }
+    .photos img:nth-child(4) { animation-delay: 0.8s; }
+    .photos img:nth-child(5) { animation-delay: 1s; }
+    .photos img:nth-child(6) { animation-delay: 1.2s; }
+    .photos img:nth-child(7) { animation-delay: 1.4s; }
+    .photos img:nth-child(8) { animation-delay: 1.6s; }
+    .photos img:nth-child(9) { animation-delay: 1.8s; }
+    .photos img:nth-child(10) { animation-delay: 2s; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="fade-in">Hai Sayangkuu 💞</h1>
+    <p class="intro slide-in-left">Ini adalah kenangan kecil kita yang nggak akan pernah aku lupa.  
+      I always Love You Johanku 💞</p>
+
+    <!-- Galeri Foto -->
+    <section class="gallery fade-in">
+      <h2 class="slide-in-left">📸 Beberapa Kenangan kita</h2>
+      <p class="photos-caption">Mungkin kita dipertemukan secara virtual Hasiann tapi rasa sayang aku ke kamu itu nyata sayang💖. 
+        Aku ada masukin 10 foto kita di epep yang xixixiix...
+      </p>
+      <div class="photos scroll-x">
+        <img src="foto/kita1.jpg" alt="Kenangan 1">
+        <img src="foto/kita2.jpg" alt="Kenangan 2">
+        <img src="foto/kita3.jpg" alt="Kenangan 3">
+        <img src="foto/kita4.jpg" alt="Kenangan 4">
+        <img src="foto/kita5.jpg" alt="Kenangan 5">
+        <img src="foto/kita6.jpg" alt="Kenangan 6">
+        <img src="foto/kita7.jpg" alt="Kenangan 7">
+        <img src="foto/kita8.jpg" alt="Kenangan 8">
+        <img src="foto/kita9.jpg" alt="Kenangan 9">
+        <img src="foto/kita10.jpg" alt="Kenangan 10">
+      </div>
+    </section>
+
+    <!-- Kata-Kata -->
+    <section class="words zoom-in">
+      <h2>💌 Pesan untuk Kamu</h2>
+      <p id="message">"Kamu adalah hadiah terbaik yang Tuhan kasih ke aku. Aku bersyukur punya kamu.  
+      Maafin aku kalo aku masih belum bisa jadi yang kamu mau. Sabar selalu yah sayang ngadepin cewe kamu ini.  
+      Aku akan usahain biar makin dewasa 💖"</p>
+    </section>
+
+    <!-- Foto Cowokku Tercinta - Versi Fullscreen -->
+<section class="foto-dia zoom-in">
+  <h2>💘 Ini Dia Cintanya Aku</h2>
+  <img src="foto/dia.jpg" alt="Foto Cowokku" class="foto-dia-img" onclick="openFullscreen()">
+  <p class="caption">Makasih udah hadir di hidup aku 🥹💖 (Klo mau zoom fotonya klik aja)</p>
+</section>
+
+<!-- Popup fullscreen -->
+<div id="fullscreenPopup" class="popup">
+  <span class="close-btn" onclick="closeFullscreen()">×</span>
+  <img class="popup-content" id="popupImg">
+</div>
+
+    <!-- Video Kenangan -->
+    <section class="video fade-in">
+      <h2>🎥 Video Spesial</h2>
+      <p class="video-caption">Ini beberapa moment video kita main bareng,kalo aku kangen kamu pasti nontonin video kita berdua hehehehe.</p>
+      <video controls width="90%">
+        <source src="foto/video.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- Hari Jadian -->
+    <section class="counter slide-in-left">
+      <h2>🗓 Sudah Berapa Lama Kita Bersama?</h2>
+      <p id="dayCounter">Menghitung...</p>
+    </section>
+
+<!-- LDR Section -->
+<section class="ldr-section fade-in">
+  <h2>🌍 Cinta Jarak Jauh Kita</h2>
+  <p class="ldr-text">
+    Meski jarak memisahkan kita, hati kita selalu dekat.  
+    Aku percaya kita bisa lewatin ini semua.  
+    Aku tunggu hari di mana kita nggak perlu lagi bilang “kapan ketemu”,  
+    tapi bisa bilang “aku pulang ke kamu.”  
+  </p>
+  <p class="ldr-heart">💘 Aku kangen kamu setiap hari 💘</p>
+</section>
+
+<!-- Harapan Kita -->
+<section class="harapan fade-in">
+  <h2>💫 Harapan Kita Nanti</h2>
+  <ul class="wish-list">
+    <li><input type="checkbox" disabled> Jalan-jalan bareng ke tempat impian 🗺</li>
+    <li><input type="checkbox" disabled> Makan malam romantis sambil liat sunset 🌇</li>
+    <li><input type="checkbox" disabled> Nanti tinggal serumah dan bangun masa depan 💍🏠</li>
+    <li><input type="checkbox" disabled> Punya baby yang banyak</li>
+    <li><input type="checkbox" disabled> Foto bareng pake baju couple 💑</li>
+    <li><input type="checkbox" disabled> Ngerayain ulang tahun berdua 🥳</li>
+    <li><input type="checkbox" disabled> Bahagia selalu sampai tua bersama</li>
+    
+  </ul>
+  <p class="harapan-note">List ini bakal kita centang satu-satu nanti ya, pelan-pelan tapi pasti yah sayang🥹💘</p>
+</section>
+
+    <!-- Pesan Rahasia -->
+    <section class="secret zoom-in">
+      <h2>💌 Pesan Rahasia</h2>
+      <button onclick="showSecret()">Jangan lupa klik yah sayangkuuu</button>
+      <p id="secretMessage" style="display: none;">Aku nggak pernah nyangka bisa sedeket ini sama kamu.  
+        Terima kasih udah hadir dan buat hidup aku lebih indah.  
+        Aku sayang kamu selamanya 💖  
+        Kamu harus sabar yah tungguin aku sampe lulus, habis itu aku bakalan ngikut kamu sayangkuu 💖</p>
+    </section>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const startDate = new Date("2025-05-01T00:00:00");
+      const today = new Date();
+      const diffTime = today - startDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      const counter = document.getElementById("dayCounter");
+      if (counter) {
+        counter.textContent = "Kita sudah bersama selama " + diffDays + " hari 😚";
+      }
+    });
+  
+    function showSecret() {
+      const secret = document.getElementById("secretMessage");
+      if (secret) secret.style.display = "block";
+    }
+  
+    // FULLSCREEN FOTO DIA
+    function openFullscreen() {
+      const popup = document.getElementById("fullscreenPopup");
+      const img = document.getElementById("popupImg");
+      img.src = "foto/dia.jpg"; // ganti jika pakai nama file lain
+      popup.style.display = "flex";
+    }
+  
+    function closeFullscreen() {
+      document.getElementById("fullscreenPopup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
